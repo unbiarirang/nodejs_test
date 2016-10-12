@@ -7,3 +7,24 @@ interface.question(">>What is the meaning of life? ", function(answer) {
     interface.setPrompt(">>");
     interface.prompt();
 });
+
+function closeInterface() {
+    console.log('Leaving interface...');
+    process.exit();
+}
+
+interface,on('line', function(cmd) {
+    if(cmd.trim() == '.leave') {
+        closeInterface();
+        return;
+    }
+    else
+        console.log("repeating command: " + cmd);
+
+    interface.setPrompt(">>");
+    interface.prompt();
+});
+
+interface.on('close', function() {
+    closeInterface();
+});

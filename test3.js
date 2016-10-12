@@ -13,7 +13,7 @@ function closeInterface() {
     process.exit();
 }
 
-interface,on('line', function(cmd) {
+interface.on('line', function(cmd) {
     if(cmd.trim() == '.leave') {
         closeInterface();
         return;

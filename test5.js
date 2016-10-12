@@ -22,11 +22,11 @@ inputChecker.prototype.check = function check(input) {
     } else if (command == "en:") {
         this.emit('end');
     } else {
-        this.emit('eco', input);
+        this.emit('echo', input);
     }
 };
 
-var ic = new inputCheck('Shelley', 'output');
+var ic = new inputChecker('Shelley', 'output');
 
 ic.on('write', function(data) {
     this.writeStream.write(data, 'utf8');

@@ -1,6 +1,5 @@
 //간단한 정적 파일 서버
 var http = require('http');
-var path = require('path');
 var fs   = require('fs');
 var base = './';
 

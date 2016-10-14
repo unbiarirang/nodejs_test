@@ -1,7 +1,7 @@
 //간단한 정적 파일 서버
 var http = require('http');
 var fs   = require('fs');
-var base = __dirname;
+var base = __dirname;             //현재 작업 디렉터리 
 
 http.createServer(function (req, res) {
     pathname = base + req.url;
@@ -19,6 +19,9 @@ http.createServer(function (req, res) {
             var file = fs.createReadStream(pathname);
             file.on('open', function() {
                 file.pipe(res);
+            });
+            file.on('error', function() {
+                console.log(err);
             });
         }
     });

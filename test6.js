@@ -1,3 +1,4 @@
+//동기식 비동기식
 var fs2 = require('fs');
 var filenames2 = fs2.readdirSync('.');
 var i;
@@ -8,7 +9,7 @@ for(i = 0; i< filenames2.length; i++) {
 
 console.log('ready 2');
 console.log('can process next job 2');
-
+////////////////////////////////////////////
 var fs = require('fs');
 
 fs.readdir('.', function (err, filenames) {

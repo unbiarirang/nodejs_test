@@ -1,3 +1,4 @@
+//최종 콜백 기능의 기반 구조
 var obj = function() {};
 
 obj.prototype.doSomething = function(arg1, arg2_) {

@@ -1,6 +1,3 @@
-input checker
-
-
-s fsdfsdfas
-sdfsdf
- filestream
+aaa
+bbb
+ccc main

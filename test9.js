@@ -1,7 +1,7 @@
 //간단한 정적 파일 서버
 var http = require('http');
 var fs   = require('fs');
-var base = './';
+var base = __dirname;
 
 http.createServer(function (req, res) {
     pathname = base + req.url;

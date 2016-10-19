@@ -1,8 +1,20 @@
-//connect.static(serve-static으로 바뀜)을 사용한 간단한 정적 파일 서버 (훨씩 간단)
-var connect = require('connect');
-var http = require('http');
-var serveStatic = require('serve-static');
+var express = require('express');
+var app = express();
 
-http.createServer(connect()
-.use(serveStatic('./'), {redirect: true})
-).listen(8124);
+var requestTime = function (req, res, next) {
+    req.requestTime = Date.now();
+    next();
+}
+
+app.use(requestTime);
+app.use(express.static('./'));
+
+app.get('/', function (req, res) {
+   var responseText = 'Hello, world';
+   responseText += 'Requested at: ' + req.requestTime + ' ';
+   res.send(responseText);
+});
+
+app.listen(3000, function() {
+    console.log('Server On!');
+});
